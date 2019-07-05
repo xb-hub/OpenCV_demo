@@ -1,5 +1,6 @@
 # OpenCV_demo
-ubuntu编译:
+- [opencv安装](https://github.com/xb-hub/my-study)
+## g++编译:
 ```
 * hsv_detector.cpp编译: g++ hsv_detector.cpp `pkg-config --cflags --libs opencv4` -o hsv_detector
 
@@ -10,4 +11,12 @@ ubuntu编译:
 
 * rgb_detector.cpp编译:    g++ rgb_detector.cpp `pkg-config --cflags --libs opencv4` -o rgb_detector -std=c++11
 ```
-[opencv安装](https://github.com/xb-hub/my-study)
+
+## cmake-make编译:
+```
+* cd cmake_build
+* cmake ..
+* make
+```
+- **cmake_build用于存放cmake生成的中间文件和Makefile**
+- **make_build用存放生成的可执行文件**
