@@ -130,3 +130,5 @@ int main()
     }
     return 0;
 }
+
+/* g++ hsv_detector.cpp `pkg-config --cflags --libs opencv4` -o hsv_detector */

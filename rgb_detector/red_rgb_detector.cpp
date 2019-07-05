@@ -92,3 +92,5 @@ int main()
     }
     return 0;
 }
+
+/* g++ rgb_detector.cpp `pkg-config --cflags --libs opencv4` -o rgb_detector */
