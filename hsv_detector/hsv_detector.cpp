@@ -24,15 +24,15 @@ void hsv_detector(Mat image)
     int minV = 0; //200
     int maxV = 0;
 
-    Mat yellowImg, blueImg, redImg, greenImg;
+    Mat yellowImg, blueImg, redImg, greenImg, cyanImg, purpleImg, orangeImg;
 
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 7; i++)
     {
         switch (i)
         {
             case 0: //黄色
-                minH = 16; //26
-                maxH = 35; //34
+                minH = 26; //26
+                maxH = 34; //34
 
                 minS = 160; //
                 maxS = 255;
@@ -42,12 +42,12 @@ void hsv_detector(Mat image)
 
                 // inRange(原图像, 最小值的范围, 最大值的范围, 输出图像); //输出图像是黑白二值图像，其中 最小值<=像素点<=最大值 的像素点是白色
                 inRange(hsvImg, Scalar(minH, minS, minV), Scalar(maxH, maxS, maxV), yellowImg); //Threshold the image
-                imshow("yellow", yellowImg);
+                // imshow("yellow", yellowImg);
                 break;
 
             case 1: //蓝色
-                 minH = 70; //26
-                maxH = 120; //34
+                 minH = 100; //26
+                maxH = 124; //34
 
                 minS = 150; //
                 maxS = 255;
@@ -56,7 +56,7 @@ void hsv_detector(Mat image)
                 maxV = 255;
 
                 inRange(hsvImg, Scalar(minH, minS, minV), Scalar(maxH, maxS, maxV), blueImg); //Threshold the image
-                imshow("blue", blueImg);
+                // imshow("blue", blueImg);
                 break;
 
             case 2: //红色
@@ -70,7 +70,7 @@ void hsv_detector(Mat image)
                 maxV = 255;
 
                 inRange(hsvImg, Scalar(minH, minS, minV), Scalar(maxH, maxS, maxV), redImg); 
-                imshow("red", redImg);
+                // imshow("red", redImg);
                 break;
 
             case 3: //绿色
@@ -84,7 +84,43 @@ void hsv_detector(Mat image)
                 maxV = 255;
 
                 inRange(hsvImg, Scalar(minH, minS, minV), Scalar(maxH, maxS, maxV), greenImg); 
-                imshow("green", greenImg);
+                // imshow("green", greenImg);
+                break;
+            
+            case 4: //橙色
+                minH = 11;
+                maxH = 25;
+                minS = 43;
+                maxS = 255;
+                minV = 46;
+                maxV = 255;
+
+                inRange(hsvImg, Scalar(minH, minS, minV), Scalar(maxH, maxS, maxV), orangeImg); 
+                // imshow("orange", orangeImg);
+                break;
+            
+            case 5: //青色
+                minH = 78;
+                maxH = 99;
+                minS = 43;
+                maxS = 255;
+                minV = 46;
+                maxV = 255;
+
+                inRange(hsvImg, Scalar(minH, minS, minV), Scalar(maxH, maxS, maxV), cyanImg); 
+                // imshow("cyan", cyanImg);
+                break;
+            
+            case 6: //紫色
+                minH = 125;
+                maxH = 155;
+                minS = 43;
+                maxS = 255;
+                minV = 46;
+                maxV = 255;
+
+                inRange(hsvImg, Scalar(minH, minS, minV), Scalar(maxH, maxS, maxV), purpleImg); 
+                // imshow("purple", purpleImg);
                 break;
 
             default:
@@ -110,10 +146,16 @@ void hsv_detector(Mat image)
     morphologyEx(blueImg, blueImg, MORPH_OPEN, eleOpen);
     morphologyEx(redImg, redImg, MORPH_OPEN, eleOpen);
     morphologyEx(greenImg, greenImg, MORPH_OPEN, eleOpen);
+    morphologyEx(orangeImg, orangeImg, MORPH_OPEN, eleOpen);
+    morphologyEx(cyanImg, cyanImg, MORPH_OPEN, eleOpen);
+    morphologyEx(purpleImg, purpleImg, MORPH_OPEN, eleOpen);
     imshow("yellow", yellowImg);
     imshow("blue", blueImg);
     imshow("red", redImg);
     imshow("green", greenImg);
+    imshow("orange", orangeImg);
+    imshow("cyan", cyanImg);
+    imshow("purple", purpleImg);
     // imshow("open", resultImg);
 }
 
