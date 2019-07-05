@@ -60,8 +60,8 @@ void hsv_detector(Mat image)
                 break;
 
             case 2: //红色
-                minH = 0; //26
-                maxH = 10; //34
+                minH = 156; //26
+                maxH = 180; //34
 
                 minS = 100; //
                 maxS = 255;

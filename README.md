@@ -9,3 +9,5 @@ ubuntu编译:
 * hsv_detector.cpp编译:    g++ hsv_detector.cpp `pkg-config --cflags --libs opencv4` -o hsv_detector -std=c++11
 
 * rgb_detector.cpp编译:    g++ rgb_detector.cpp `pkg-config --cflags --libs opencv4` -o rgb_detector -std=c++11
+```
+[opencv安装](https://github.com/xb-hub/my-study)
