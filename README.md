@@ -1,4 +1,5 @@
-# OpenCV_demo
+# OpenCV_demo  
+- 环境:ubuntu 16.04,ubuntu 18.04
 - [opencv安装](https://github.com/xb-hub/my-study)
 ## g++编译:
 ```
@@ -14,6 +15,7 @@
 
 ## cmake-make编译:
 ```
+* mkdir cmake_build
 * cd cmake_build
 * cmake ..
 * make
