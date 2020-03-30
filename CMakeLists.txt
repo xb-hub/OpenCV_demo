@@ -6,8 +6,6 @@ include_directories( ${OpenCV_INCLUDE_DIRS} )
 aux_source_directory(hsv_detector HSV)
 aux_source_directory(rgb_detector RGB)
 
-set(EXECUTABLE_OUTPUT_PATH ../make_build)
-
 add_executable( hsv_detector ${HSV} )
 target_link_libraries( hsv_detector ${OpenCV_LIBS} )
 
